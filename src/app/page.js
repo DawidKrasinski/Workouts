@@ -4,6 +4,7 @@ export default function Home() {
     <div style={{width: '270px', height: '350px'}} className="bg-white border-2 border-gray-400 rounded-xl"></div>
   )}
 
+
   return (
 <div style={{height: '1700px', gridTemplateColumns: '1fr 450px 50px 450px 1fr', gridTemplateRows: '50px 500px 50px 500px 50px 500px'}}
  className="bg-gray-200 flex justify-center grid">
@@ -34,6 +35,10 @@ export default function Home() {
     <span style={{marginTop: '20px'}} className="text-5xl font-semibold">KALKULATOR
         <a href="/">(+)</a>
       </span>
+      <div>
+        <span>----DANE----</span>
+      </div>
+      <div></div>
     </footer>
 </div>
   );
