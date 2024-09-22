@@ -31,14 +31,16 @@ export default function Home() {
       <div style={{height: '370px', width: '350px'}} className="bg-white border-2 border-gray-400 rounded-2xl"></div>
     </section>
 
-    <footer style={{gridColumn: '2 / span 3', gridRowStart: '6'}} className="border-2 border-gray-400 rounded-3xl bg-gray-100 shadow-2xl shadow-gary-900 flex justify-center">
-    <span style={{marginTop: '20px'}} className="text-5xl font-semibold">KALKULATOR
+    <footer style={{gridColumn: '2 / span 3', gridRowStart: '6', gridTemplateColumns: 'repeat(19, 1fr)', gridTemplateRows: 'repeat(10, 1fr)'}} className="border-2 border-gray-400 rounded-3xl bg-gray-100 shadow-2xl shadow-gary-900 grid">
+    <div style={{gridRow: '1 / 3', gridColumn: '4 / -4'}} className="text-5xl font-semibold flex justify-center items-center">KALKULATOR 1RM
         <a href="/">(+)</a>
-      </span>
-      <div>
-        <span>----DANE----</span>
       </div>
-      <div></div>
+      <div style={{gridRow: '3 / -2', gridColumn: '2 / span 8'}} className="bg-white border-2 border-gray-400 rounded-2xl">
+        <span className="text-5xl font-semibold">DANE <hr/> x</span>
+      </div>
+      <div style={{gridRow: '3 / -2', gridColumn: '11 / span 8'}} className="bg-white border-2 border-gray-400 rounded-2xl">
+        <span>----WYNIKI----</span>
+      </div>
     </footer>
 </div>
   );
