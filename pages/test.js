@@ -1,20 +1,28 @@
 export default function Test() {
 
-  class nigger {
-    constructor (name, old) {
-      this.old = old
-      this.name = name
-    }
+ const getUserData = () => {
+  return new Promise ((resolve, reject) => {
 
-    doPracy() {
-      return <span>{this.name} pracuje... <br/></span>
-    }
+    setTimeout(() => {
+      console.log("working...")
+      resolve("end!")
+    }, 800)
+  }) 
+ }
+
+ 
+  const sendEmail = () => {
+    return new Promise ((resolve, reject) => {
+      setTimeout(() => {
+        console.log("sending email...")
+        resolve("send email!")
+      }, 200)
+    })
+
   }
 
-  let x 
-  for(let i=0 ; i<10 ; i++) 
-    x[i] = new nigger(`nigga${i}`, Math.floor((Math.random(100)*1)))
-
-  return <span>{x}</span>
+  getUserData()
+  .then(sendEmail)
+return <div></div>
 }
 
