@@ -1,5 +1,7 @@
 export default function Test() {
 
+const x = 0
+
   const getUserData = () => {
     return new Promise ((resolve, reject) => {
       setTimeout(() => {
@@ -13,7 +15,12 @@ export default function Test() {
     return new Promise ((resolve, reject) => {
       setTimeout(() => {
         console.log("log in...")
-        resolve()
+
+        if(x) 
+          resolve()
+        else 
+          reject()
+
       }, 200)
     })
   }
@@ -29,7 +36,9 @@ export default function Test() {
 
   async function someAsyncFunction () {
     const userData = await getUserData()
-    const user = await logIn(userData)
+    try {
+      const user = await logIn(userData)
+    } catch {}
     await sendEmail(user)
     console.log("end!")
   }

@@ -1,9 +1,16 @@
+"use client"
+import { useState } from 'react';
+
 export default function Home() {
+  const [kgInput, setKgInput] = useState('')
+  const InputChange = (e) => {
+    setKgInput(e.target.value)
+  }
+
   const Day = () => {
     return (
     <div style={{width: '270px', height: '350px'}} className="bg-white border-2 border-gray-400 rounded-xl"></div>
   )}
-
 
   return (
 <div style={{height: '1700px', gridTemplateColumns: '1fr 450px 50px 450px 1fr', gridTemplateRows: '50px 500px 50px 500px 50px 500px'}}
@@ -36,10 +43,16 @@ export default function Home() {
         <a href="/">(+)</a>
       </div>
       <div style={{gridRow: '3 / -2', gridColumn: '2 / span 8'}} className="bg-white border-2 border-gray-400 rounded-2xl">
-        <span className="text-5xl font-semibold">DANE <hr/> x</span>
+        <div className="text-5xl font-semibold">DANE: 
+          <input onChange={InputChange} type="number" style={{width: '250px', height: '70px'}} className="border-2 border-black rounded-xl"/>
+          <input type="number" style={{width: '250px', height: '70px'}} className="border-2 border-black rounded-xl"/>
+          <input type="number" style={{width: '250px', height: '70px'}} className="border-2 border-black rounded-xl"/>
+        </div>
       </div>
       <div style={{gridRow: '3 / -2', gridColumn: '11 / span 8'}} className="bg-white border-2 border-gray-400 rounded-2xl">
-        <span>----WYNIKI----</span>
+        <div className="text-5xl font-semibold">WYNIKI:
+          <div>{kgInput}</div>
+        </div>
       </div>
     </footer>
 </div>
