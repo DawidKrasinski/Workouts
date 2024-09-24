@@ -2,9 +2,42 @@
 import { useState } from 'react';
 
 export default function Home() {
-  const [kgInput, setKgInput] = useState('')
-  const InputChange = (e) => {
+  const [kgInput, setKgInput] = useState(0)
+  const kgInputChange = (e) => {
     setKgInput(e.target.value)
+  }
+
+  const [repsInput, setRepsInput] = useState(0)
+  const repsInputChange = (e) => {
+    setRepsInput(e.target.value)
+  }
+
+  const [bodyWeightInput, setBodyWeightInput] = useState(0)
+  const bodyWeightInputChange = (e) => {
+    setBodyWeightInput(e.target.value)
+  }
+
+  const values = {
+    1: 1,
+    2: 1.06,
+    3: 1.09,
+    4: 1.12,
+    5: 1.15,
+    6: 1.19,
+    7: 1.22,
+    8: 1.25,
+    9: 1.28,
+    10: 1.31,
+    11: 1.34,
+    12: 1.38
+  }
+
+  function oneRepMax () {
+    return kgInput && repsInput ? Math.floor(kgInput * values[repsInput]*100)/100 : 0
+  }
+
+  function oneRepMaxBW () {
+    return kgInput && repsInput && bodyWeightInput ? Math.floor(kgInput * values[repsInput]*100/bodyWeightInput) : 0
   }
 
   const Day = () => {
@@ -44,14 +77,15 @@ export default function Home() {
       </div>
       <div style={{gridRow: '3 / -2', gridColumn: '2 / span 8'}} className="bg-white border-2 border-gray-400 rounded-2xl">
         <div className="text-5xl font-semibold">DANE: 
-          <input onChange={InputChange} type="number" style={{width: '250px', height: '70px'}} className="border-2 border-black rounded-xl"/>
-          <input type="number" style={{width: '250px', height: '70px'}} className="border-2 border-black rounded-xl"/>
-          <input type="number" style={{width: '250px', height: '70px'}} className="border-2 border-black rounded-xl"/>
+          <input onChange={kgInputChange} type="number" style={{width: '250px', height: '70px'}} className="border-2 border-black rounded-xl"/>
+          <input onChange={repsInputChange} type="number" style={{width: '250px', height: '70px'}} className="border-2 border-black rounded-xl"/>
+          <input onChange={bodyWeightInputChange} type="number" style={{width: '250px', height: '70px'}} className="border-2 border-black rounded-xl"/>
         </div>
       </div>
       <div style={{gridRow: '3 / -2', gridColumn: '11 / span 8'}} className="bg-white border-2 border-gray-400 rounded-2xl">
         <div className="text-5xl font-semibold">WYNIKI:
-          <div>{kgInput}</div>
+          <div>{oneRepMax()}KG</div>
+          <div>{oneRepMaxBW()}%BW</div>
         </div>
       </div>
     </footer>
