@@ -46,5 +46,6 @@ const x = 0
   someAsyncFunction()
 
 return <div>1</div>
+
 }
 

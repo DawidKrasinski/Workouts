@@ -76,16 +76,17 @@ export default function Home() {
         <a href="/">(+)</a>
       </div>
       <div style={{gridRow: '3 / -2', gridColumn: '2 / span 8'}} className="bg-white border-2 border-gray-400 rounded-2xl">
-        <div className="text-5xl font-semibold">DANE: 
+        <div style={{paddingTop: '30px'}} className="text-5xl font-semibold flex justify-around flex-wrap">DANE: 
           <input onChange={kgInputChange} type="number" style={{width: '250px', height: '70px'}} className="border-2 border-black rounded-xl"/>
           <input onChange={repsInputChange} type="number" style={{width: '250px', height: '70px'}} className="border-2 border-black rounded-xl"/>
           <input onChange={bodyWeightInputChange} type="number" style={{width: '250px', height: '70px'}} className="border-2 border-black rounded-xl"/>
         </div>
       </div>
       <div style={{gridRow: '3 / -2', gridColumn: '11 / span 8'}} className="bg-white border-2 border-gray-400 rounded-2xl">
-        <div className="text-5xl font-semibold">WYNIKI:
-          <div>{oneRepMax()}KG</div>
-          <div>{oneRepMaxBW()}%BW</div>
+        <div style={{paddingTop: '30px'}}className="text-5xl font-semibold flex justify-around flex-wrap">
+          <span className="w-full text-center">WYNIKI:</span>
+          <div className="w-full text-center">{oneRepMax()}KG</div>
+          <div className="w-full text-center">{oneRepMaxBW()}%BW</div>
         </div>
       </div>
     </footer>
