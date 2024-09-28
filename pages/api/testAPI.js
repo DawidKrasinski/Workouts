@@ -1,3 +1,3 @@
 export default function handler(req, res) {
-    res.status(200).json({message: 'hello from next js api!'})
+    res.status(200).json({message: 'hello from backend!'})
 }
